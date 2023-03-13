@@ -1,4 +1,4 @@
-function updateDate(timestamp) {
+function formatDate(timestamp) {
   let date = new Date(timestamp);
   let hours = date.getHours();
   if (hours < 10) {
@@ -34,8 +34,9 @@ function updateDate(timestamp) {
     "December",
   ];
   let month = months[date.getMonth()];
+  let year = date.getFullYear();
 
-  return `${day}  ${today} ${month} ${hours}:${minutes}`;
+  return `${day},  ${today} ${month} ${year}, <strong> ${hours}:${minutes}</strong>`;
 }
 
 function displayTemp(response) {
@@ -51,7 +52,7 @@ function displayTemp(response) {
   let pressureElement = document.querySelector("#pressure");
   pressureElement.innerHTML = `${response.data.temperature.pressure} hPa`;
   let dateElement = document.querySelector("#date-time");
-  dateElement.innerHTML = updateDate(response.data.time * 1000);
+  dateElement.innerHTML = formatDate(response.data.time * 1000);
 }
 
 let apiKey = "0tade3eeb77402aa34ff8a204c86adoc";
