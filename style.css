@@ -57,6 +57,7 @@ img {
   top: -34px;
   left: 113px;
   font-size: 18px;
+  font-weight: 600;
 }
 .fahrenheit {
   text-decoration: none;
@@ -81,11 +82,14 @@ li:first-letter {
   font-size: 18px;
   line-height: 10px;
   margin-bottom: 20px;
+  font-weight: 500;
 }
+
 .date {
   font-size: 18px;
   line-height: 10px;
   margin-bottom: 70px;
+  font-weight: 500;
 }
 
 footer {

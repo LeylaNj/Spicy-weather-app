@@ -49,7 +49,7 @@
             alt="clear"
           />
           <span class="weather-temperature-icon">
-            <strong>12</strong
+            <strong id="temperature"></strong
             ><span class="units">
               <a href="#" class="celsius">˚C</a>|<a href="#" class="fahrenheit"
                 >˚F</a
@@ -58,7 +58,8 @@
           >
 
           <ul>
-            <li class="discription">Mostly Cloudy</li>
+            <li class="discription" id="description"></li>
+
             <li class="date">Sunday 12 March 22:14</li>
           </ul>
           <div class="row">
@@ -67,7 +68,7 @@
                 <li>
                   <i class="fa-solid fa-wind"></i>
                 </li>
-                <li>7 km/h</li>
+                <li id="wind"></li>
                 <li>Wind</li>
               </ul>
             </div>
@@ -76,17 +77,17 @@
                 <li>
                   <i class="fa-solid fa-droplet"></i>
                 </li>
-                <li>74 %</li>
+                <li id="humidity"></li>
                 <li>Humidity</li>
               </ul>
             </div>
             <div class="col-4">
               <ul>
                 <li>
-                  <i class="fa-solid fa-water"></i>
+                  <i class="fa-solid fa-download"></i>
                 </li>
-                <li>0 mm</li>
-                <li>Precipitation</li>
+                <li id="pressure"></li>
+                <li>Pressure</li>
               </ul>
             </div>
           </div>
