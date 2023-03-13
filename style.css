@@ -74,7 +74,9 @@ ul {
   text-align: center;
   font-weight: 200;
 }
-
+li:first-letter {
+  text-transform: capitalize;
+}
 .discription {
   font-size: 18px;
   line-height: 10px;
