@@ -53,8 +53,25 @@ function displayTemp(response) {
   pressureElement.innerHTML = `${response.data.temperature.pressure} hPa`;
   let dateElement = document.querySelector("#date-time");
   dateElement.innerHTML = formatDate(response.data.time * 1000);
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `https://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
+  );
+  iconElement.setAttribute("alt", response.data.condition.description);
+}
+function search(city) {
+  let apiKey = "0tade3eeb77402aa34ff8a204c86adoc";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=genoa&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayTemp);
 }
 
-let apiKey = "0tade3eeb77402aa34ff8a204c86adoc";
-let apiUrl = `https://api.shecodes.io/weather/v1/current?query=genoa&key=${apiKey}&units=metric`;
-axios.get(apiUrl).then(displayTemp);
+function getCity(event) {
+  event.preventDefault();
+  let cityElement = document.querySelector("#city-input");
+  search(cityElement.value);
+}
+
+let formElement = document.querySelector("#form-input");
+formElement.addEventListener("submit", getCity);
+search("Genoa");
