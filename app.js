@@ -59,17 +59,20 @@ function displayTemp(response) {
     `https://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
   );
   iconElement.setAttribute("alt", response.data.condition.description);
+
+  let cityElement = document.querySelector("#city");
+  cityElement.innerHTML = response.data.city;
 }
 function search(city) {
   let apiKey = "0tade3eeb77402aa34ff8a204c86adoc";
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=genoa&key=${apiKey}&units=metric`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayTemp);
 }
 
 function getCity(event) {
   event.preventDefault();
-  let cityElement = document.querySelector("#city-input");
-  search(cityElement.value);
+  let cityInputElement = document.querySelector("#city-input");
+  search(cityInputElement.value);
 }
 
 let formElement = document.querySelector("#form-input");
