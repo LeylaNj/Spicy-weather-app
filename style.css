@@ -62,6 +62,7 @@ img {
 .weather-temperature-icon .active {
   color: #3d3b3b;
   cursor: default;
+  text-decoration: none;
 }
 .weather-temperature-icon .active:hover {
   text-decoration: none;
